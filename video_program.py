@@ -33,6 +33,8 @@ while True:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
     motion_list.append(motion)
 
+    motion_list = motion_list[-2:]
+
     if motion_list[-1] == 1 and motion_list[-2] == 0:
         times.append(datetime.now())
     elif motion_list[-1] == 0 and motion_list[-2] == 1:
